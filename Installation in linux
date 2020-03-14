@@ -1,0 +1,8 @@
+# Go to the terraform oficial website 
+-----> terraform.io
+# Copy the linux and download by using wget command
+-----> wget https://releases.hashicorp.com/terraform/0.12.23/terraform_0.12.23_linux_amd64.zip
+# unzip the donwloaded file 
+-----> unzip terraform_0.12.23_linux_amd64.zip
+# Run the terraform bu using below command 
+-----> ./terraform -version 
