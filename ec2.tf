@@ -9,7 +9,7 @@ resource "aws_instance" "myec2" {
    instance_type = "t2.micro"
 }
 
-### Provider = its is used to establish the which infrastruture we want 
+### Provider  = its is used to establish the which infrastruture we want 
 ### resources = its used to lauch the particular services in the provider 
 
 
@@ -20,3 +20,7 @@ resource "aws_instance" "myec2" {
 
 ### Destroying particular resources 
     ---> teraform destroy -target aws_instance.myec2    (terraform destroy -target (resource name.m=our name))
+
+### Fetch the latest information about our current state of your insfrastructure 
+   ----> terraform refresh
+
