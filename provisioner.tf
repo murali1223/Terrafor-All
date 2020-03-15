@@ -17,3 +17,6 @@ resource "aws_instance" "myec2" {
      }
    }
 }   
+
+### Provisioner = By using this we have to not aonly created instance , 
+                  we have to install nginx server and run automatically by using provisioner 
