@@ -24,3 +24,15 @@ resource "aws_instance" "myec2" {
 ### Fetch the latest information about our current state of your insfrastructure 
    ----> terraform refresh
 
+#### Desire state and Current state ###
+#### Desire state  =  its nothing but instance type in the resources 
+#### Current state =  its nothing but current state of the state files in instance type 
+
+
+
+Example: if we did edit in aws console like changing instance size , its wont show in ec2.tf file 
+         when ever we pass command like terraform refresh or terraform plan 
+         if we will change the current value and its make cureent value equl to desired value
+         
+         Desire value == Current value
+
