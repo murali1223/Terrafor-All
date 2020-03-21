@@ -13,6 +13,8 @@ resource "aws_instance" "myec2" {
      host        = "self.public_ip"
      user        = "ec2-user"
      private_key = "${file("./terraform.pem")}"
+      
+      #### file (files reads the contents of a file at the given path and resturs them as a string)
  
      }
    }
