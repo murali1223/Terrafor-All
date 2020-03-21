@@ -17,5 +17,7 @@ Remote Backend :-
     bucket = "mybucket"
     key    = "path/to/my/key"
     region = "us-east-1"
+    access_key = "........" --> we have to pass only secret_key and access_key , not entire resourc block , otherwise we will get error.
+    secret_key = "........" -->
   }
 }
