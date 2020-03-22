@@ -2,6 +2,12 @@ Providers :-
 
 --> we have to launch our elastic ip in one region we can write code like this 
 
+Credentials
+
+[default]
+aws_acess_key_id = ............
+aws_secret_acess_key = ..........
+
 providers.tf
 
 provider "aws" {
@@ -18,6 +24,12 @@ resource "aws_elp" "myelp" {
 
 --> we have to launch one elastic ip in one region & one more elastic ip lauch in another region check below 
 
+Credentials
+
+[default]
+aws_acess_key_id = ............
+aws_secret_acess_key = ..........
+
 providers.tf
 
 provider "aws" {
@@ -31,4 +43,33 @@ resource "aws_elp" "myelp" {
    vpc = "true"
    provider = "aws.mumbai"
 }
+
+######################## Launching instances or elp's in different accounts #########################
+
+Credentials
+
+[default]
+aws_acess_key_id = ............
+aws_secret_acess_key = ..........
+
+[account02]
+aws_acess_key_id = ............
+aws_secret_acess_key = ..........
+
+providers.tf
+
+provider "aws" {
+   alias  = "aws02"
+   region = "ap-south-1"
+   profile = "account02"
+}
+
+elp.tf
+
+resource "aws_elp" "myelp" {
+   vpc = "true"
+   provider = "aws.aws02"
+   
+}
+
 
