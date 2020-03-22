@@ -1,0 +1,11 @@
+                     ############### Integrating terraform wih jenkins for (CI/CD) #################
+
+1) Go to github and add our terraform code into github 
+2) After that open jenkins and create freestyle job and add git url
+3) After that we can set webhook concept for continious integration 
+4) after that go to BUILD and select execute shell and commands like below 
+   --> cd projects/A
+   --> terraform init
+   --> terraform plan
+   --> terraform apply -auto-approve
+   
