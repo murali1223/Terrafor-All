@@ -1,0 +1,34 @@
+Providers :-
+
+--> we have to launch our elastic ip in one region we can write code like this 
+
+providers.tf
+
+provider "aws" {
+   region = "us-west-1"
+}
+
+elp.tf
+
+resource "aws_elp" "myelp" {
+   vpc = "true"
+}   
+
+####################### BY using ALIAS we can launch our things in Multiple regions ######################
+
+--> we have to launch one elastic ip in one region & one more elastic ip lauch in another region check below 
+
+providers.tf
+
+provider "aws" {
+   alias  = "mumbai"
+   region = "ap-south-1"
+}
+
+elp.tf
+
+resource "aws_elp" "myelp" {
+   vpc = "true"
+   provider = "aws.mumbai"
+}
+
