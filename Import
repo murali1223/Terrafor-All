@@ -1,0 +1,36 @@
+## Terraform import:-
+
+It might happend that there is a resource which is already created manually.
+in such case, any change you want to make to that resource , must be done manually 
+
+Def:- Import the specific structure into terrform structure
+
+
+Example :-  
+
+
+   provider.tf
+   
+   provider "aws" {
+      region = "us-west-1"
+   }
+   
+   ec2.tf
+   
+   resource "aws_instance" "myec2" {
+     ami = "our manual instance id"           (means which one u want to import into terraform structure)
+     instance_type = "t2.micro"
+     vpc_security_group_ids = ["......."]      (means which one u want to import into terraform structure)
+     key_name = "which key u have for that resource"
+     subnet_id =  "subnetid"
+     
+     tags {
+        name = "murali"
+     }
+  }   
+  
+  ## now youcan apply terraform plan apply we will get error , bcz its not linked to the resource file
+
+## Now we have to import the state of the ec2 instance and link to the manual configuration of terraform resource 
+
+-----> terraform  import aws_instance.myec2 (here we can paste instance id of what we trying to import)
